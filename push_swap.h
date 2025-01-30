@@ -6,7 +6,7 @@
 /*   By: motelti <motelti@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 08:54:22 by motelti           #+#    #+#             */
-/*   Updated: 2025/01/27 18:58:55 by motelti          ###   ########.fr       */
+/*   Updated: 2025/01/30 23:55:32 by motelti          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ int			check_fifth_case(t_lst **s);
 int			check_dup(t_lst *s);
 void		clear_stack(t_lst **s);
 int			initstack(int ac, char **av, t_lst **a_stack);
+int			is_valid_number(char *str);
 
 #endif
