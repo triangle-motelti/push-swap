@@ -4,6 +4,7 @@ Below is an enhanced explanation for the "Push Swap" project.
 ==> Push Swap is a project that requires sorting a stack of integers using a restricted set of operations and an auxiliary stack. 
 The objective is to sort stack A in ascending order, with the smallest number at the top, in the fewest moves possible, using stack B as a temporary holding space.
 
+============================================================================================================================================================================================================
 Operations
 The allowed operations are:
 
@@ -19,6 +20,7 @@ rra: Reverse rotate stack A (shift all elements down by one; the last element be
 rrb: Reverse rotate stack B (same as rra but for stack B).
 rrr: Perform rra and rrb simultaneously.
 
+============================================================================================================================================================================================================
 Sorting Algorithms
 ==> The code implements tailored sorting strategies depending on the number of elements in the stack. 
 
@@ -28,7 +30,7 @@ Below is an explanation of each algorithm and how it works.
 For stacks with exactly 3 elements, the algorithm uses a straightforward method to sort them efficiently with minimal operations.
 
 
-
+============================================================================================================================================================================================================
 How It Works:
 
 ==> The function evaluates the current order of the three elements by checking specific conditions (e.g., whether the first element is greater than the second, the second greater than the third, etc.).
@@ -40,7 +42,7 @@ Key Feature: It handles all possible permutations of three elements with predefi
 For stacks with 4 elements, the algorithm builds on the sort_3 function by isolating one element temporarily.
 
 
-
+============================================================================================================================================================================================================
 How It Works:
 
 ==> Find the Smallest Element: Identify the smallest number in stack A.
@@ -52,7 +54,7 @@ Key Feature: Reduces the problem to a smaller, already-solved case (sorting 3 el
 For stacks with 5 elements, the approach extends the sort_4 logic.
 
 
-
+============================================================================================================================================================================================================
 How It Works:
 
 ==> Push the Smallest Element: Identify the smallest element in stack A and push it to stack B with pb. For instance, [5, 2, 4, 1, 3] becomes [5, 2, 4, 3] in A and [1] in B.
@@ -63,7 +65,7 @@ Key Feature: Iteratively reduces the stack size, leveraging previously defined f
 For stacks with more than 5 elements, a sophisticated chunk-based algorithm is used to handle larger datasets efficiently.
 
 
-
+============================================================================================================================================================================================================
 How It Works:
 
 Determine Chunk Size:
@@ -85,7 +87,7 @@ Pushes it to stack A with pa.
 This continues until stack B is empty, leaving stack A sorted (e.g., [1, 2, 3, 5, 7, 9]).
 Key Feature: Breaks the problem into manageable chunks, ensuring scalability while optimizing operation count.
 
-
+============================================================================================================================================================================================================
 Error Handling
 The program validates input by checking for:
 
