@@ -1,11 +1,15 @@
 Below is an enhanced explanation for the "Push Swap" project. 
+
 ==> It details the sorting algorithms implemented in the code and describes how they work to sort a stack of integers using two stacks (A and B) and a limited set of operations.
 
 ==> Push Swap is a project that requires sorting a stack of integers using a restricted set of operations and an auxiliary stack. 
+
 The objective is to sort stack A in ascending order, with the smallest number at the top, in the fewest moves possible, using stack B as a temporary holding space.
 
 ============================================================================================================================================================================================================
+
 Operations
+
 The allowed operations are:
 
 sa: Swap the first two elements at the top of stack A.
@@ -21,7 +25,9 @@ rrb: Reverse rotate stack B (same as rra but for stack B).
 rrr: Perform rra and rrb simultaneously.
 
 ============================================================================================================================================================================================================
+
 Sorting Algorithms
+
 ==> The code implements tailored sorting strategies depending on the number of elements in the stack. 
 
 Below is an explanation of each algorithm and how it works.
@@ -66,6 +72,7 @@ For stacks with more than 5 elements, a sophisticated chunk-based algorithm is u
 
 
 ============================================================================================================================================================================================================
+
 How It Works:
 
 Determine Chunk Size:
@@ -73,6 +80,7 @@ For stacks with ≤ 100 elements, the chunk size is 20.
 For stacks with > 100 elements, the chunk size is 33.
 This size dictates how many elements are processed at a time.
 Push Elements to Stack B in Chunks:
+
 ==> Elements are assigned indexes based on their sorted position.
 The algorithm pushes elements from stack A to stack B in chunks:
 If an element’s index is within the current chunk range (e.g., 0 to 20), it’s pushed to stack B with pb.
@@ -80,6 +88,7 @@ If it’s in the next chunk range, it’s pushed and then rotated (rb) to mainta
 Rotations (ra or rra) are optimized based on the element’s position in stack A to minimize moves.
 Example: For [7, 2, 9, 1, 5, 3], it might push 1 and 2 to stack B, rotating as needed, until all elements are in B.
 Push Back to Stack A:
+
 ==> Once all elements are in stack B, the algorithm repeatedly:
 Finds the maximum element in stack B.
 Moves it to the top using the fewest rotations (rb or rrb).
